@@ -17,6 +17,7 @@ function Body() {
         <Nav.Link className="btn btn-light"href="/signup">SIGN UP</Nav.Link>
           <h3>OR</h3>
         <Nav.Link className="btn btn-light"href="/signup">SIGN IN</Nav.Link>
+
         </div>
       </div>
       <div id="imgdiv">
