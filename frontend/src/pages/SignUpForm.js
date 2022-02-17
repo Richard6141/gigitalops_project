@@ -5,7 +5,7 @@ import { useState } from "react";
 import "../asserts/signup.css";
 import axios from "axios";
 
-import { BrowserRouter as Router, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const SignUpForm = () => {
   const [name, setName] = useState("");
@@ -42,7 +42,10 @@ const SignUpForm = () => {
       speciality,
       birthday
     );
-    axios.post("http://localhost:5000/user/register", enter, headers).then(window.location.replace("/")) .catch(error=>{alert("Something when wrong !")})
+    axios.post("http://localhost:5000/user/register", enter, headers).then(res =>{
+      console.log("Succes")
+      window.console.Redirect("/")
+    }).catch(error=>{alert("Something when wrong !")})
   };
  
 

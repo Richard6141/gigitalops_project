@@ -26,7 +26,8 @@ const SignInForm = () => {
       .then((response) => {
         localStorage.setItem("Token", response.data.token);
         localStorage.setItem("userId", response.data.decoc);
-      }).then(window.location.replace("/"))
+        window.location.replace("/")
+      })
       .catch((error) => {
         console.log("There was an error!", error);
       });
