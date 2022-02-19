@@ -13,7 +13,6 @@ import axios from "axios";
 
 function AllTaskForUser(props) {
   const [show, setShow] = useState(false);
-  const [showme, setShowme] = useState(false);
 
   const [taskName, setTaskName] = useState("");
   const [description, setDescription] = useState("");
@@ -50,7 +49,6 @@ function AllTaskForUser(props) {
           console.log(res.data);
         });
       })
-
       .catch((error) => {
         console.log("There was an error!", error);
       });

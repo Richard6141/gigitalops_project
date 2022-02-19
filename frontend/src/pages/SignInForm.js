@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Col, Button } from "react-bootstrap";
 import "../asserts/signup.css";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
 
 const SignInForm = () => {
   const [data, setData] = useState({});

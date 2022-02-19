@@ -42,8 +42,8 @@ const SignUpForm = () => {
     );
     axios.post("http://localhost:5000/user/register", enter, headers).then(res =>{
       console.log("Succes")
-      window.console.Redirect("/")
-    }).catch(error=>{alert("Something when wrong !")})
+      window.console.replace("/")
+    }).catch(error=>{ error})
   };
  
 
