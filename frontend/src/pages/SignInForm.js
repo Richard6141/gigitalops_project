@@ -26,6 +26,8 @@ const SignInForm = () => {
       .then((response) => {
         localStorage.setItem("Token", response.data.token);
         localStorage.setItem("userId", response.data.decoc);
+        localStorage.setItem("username", response.data.user.surname);
+        localStorage.setItem("roleId", response.data.user.Userroles[0].roleId);
         window.location.replace("/")
       })
       .catch((error) => {

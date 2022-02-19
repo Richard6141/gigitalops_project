@@ -5,8 +5,6 @@ import { useState } from "react";
 import "../asserts/signup.css";
 import axios from "axios";
 
-import { Redirect } from "react-router-dom";
-
 const SignUpForm = () => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");

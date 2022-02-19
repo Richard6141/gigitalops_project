@@ -10,6 +10,7 @@ import {
   Form,
 } from "react-bootstrap";
 function NavBar() {
+
   const logout = (e) => {
     e.preventDefault()
 
@@ -17,6 +18,9 @@ function NavBar() {
     if(token != undefined ){
       localStorage.removeItem("Token")
       localStorage.removeItem("userId")
+      localStorage.removeItem("roleId")
+      localStorage.removeItem("surname")
+      
       window.location.replace("/")
     }else{
       window.location.replace("/")
@@ -35,19 +39,19 @@ function NavBar() {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/alltask">Tasks</Nav.Link>
-            <Nav.Link href="/alluser">Users</Nav.Link>
+            <Nav.Link href="/alltask" style={{display:localStorage.getItem("Token")? 'block' : 'none' }}>Tasks</Nav.Link>
+            <Nav.Link href="/alluser" style={{display:localStorage.getItem("roleId") == 1 ? 'block' : 'none' }}>Users</Nav.Link>
           </Nav>
           <Form className="d-flex">
-            <Nav.Link href="/signup">
+            <Nav.Link href="/signup" style={{display:localStorage.getItem("Token")? 'none' : 'block' }}>
               <Button variant="outline-info" className="me-3">
                 Sign up
               </Button>
             </Nav.Link>
-            <Nav.Link href="/signin">
+            <Nav.Link href="/signin" style={{display:localStorage.getItem("Token")? 'none' : 'block' }}>
               <Button variant="outline-primary">Sign in</Button>
             </Nav.Link>
-            <NavDropdown title="Username" id="navbarScrollingDropdown">
+            <NavDropdown title={localStorage.getItem("username")} id="navbarScrollingDropdown" style={{display:localStorage.getItem("Token")? 'block' : 'none' }}>
               <NavDropdown.Item href="#action3">Profile</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Today Tasks</NavDropdown.Item>
               <NavDropdown.Divider />
